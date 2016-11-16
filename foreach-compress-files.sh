@@ -17,8 +17,8 @@ else
 		# Make a simbolic link in your Windows\System32 folder
 		SYMLINK_COMMAND="mklink \"C:\Windows\System32\rar.exe\" \"$RAR\""
 		echo $SYMLINK_COMMAND
-		
 		cmd <<< $SYMLINK_COMMAND > /dev/null
+		
 		PASSWORD=$2
 		
 		for currentFile in *.${EXT}; do
