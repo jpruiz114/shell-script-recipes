@@ -1,12 +1,12 @@
 #!/bin/bash
 
 if [ "$#" -ne 2 ]; then
-    echo "Illegal number of parameters"
+    echo "Right usage: foreach-compress-files.sh files-location extension password"
 else
-	FILES=$1
-	cd $FILES
+	FOLDER_LOCATION=$1
+	cd $FOLDER_LOCATION
 	
-	EXT=mp4
+	EXT=$2
 	
 	# Place here the location of the Rar exe file
 	RAR="C:\Program Files\WinRAR\Rar.exe"
@@ -19,7 +19,7 @@ else
 		echo $SYMLINK_COMMAND
 		cmd <<< $SYMLINK_COMMAND > /dev/null
 		
-		PASSWORD=$2
+		PASSWORD=$3
 		
 		for currentFile in *.${EXT}; do
 			echo "Processing $currentFile file..."
